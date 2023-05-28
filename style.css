@@ -1,0 +1,598 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*background*/
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #25af3a;
+    padding-top:100px;
+    
+  }
+  ul .logo img{
+    width: 150px;
+    margin-top: 50px;
+    
+    padding: 0;
+  }
+  ul .logo img:hover{
+   cursor: pointer;
+  }
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    width: 100%;
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 30px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    color: #fff;
+    transition: transform 0.3s ease;
+    font-family: 'Lobster', cursive;
+  }
+  
+  .navbar a:hover {
+    background-color: #b3e820;
+    transform: scale(1.1);
+  }
+  
+  .navbar svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    fill: #fff; /* Set the SVG fill color to white */
+  }
+  /*Navber responsive*/
+  @media (max-width: 768px) {
+    .navbar {
+      width: 100%;
+      height: auto;
+      padding: 20px 10px;
+    }
+  
+    .navbar ul {
+      display: none;
+    }
+  
+    .navbar ul.menu {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .navbar ul.menu.show {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  /*Button to go on top*/
+  #scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: green;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  #scrollToTopButton:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    margin-left: 80px;
+    padding: 20px;
+  }
+  .dynamic-text {
+    text-align: center;
+    margin-top: 200px;
+    color: black;
+
+  }
+  .dynamic-text>h1{
+    font-size: 50px;
+    font-family: 'Pangolin', cursive;
+  }
+  .dynamic-text p{
+    font-size:  30px; 
+    color: green;
+  }
+  .cursor::after {
+    content: '|';
+    position: absolute;
+    top: 0;
+    right: -10px; /* Adjust the position as needed */
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  /*about section*/
+  .about-section {
+    margin-left: 200px; /* Adjust the margin to match the width of the navbar */
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+
+  .about-section .image {
+    flex-shrink: 0;
+    margin-right: 30px;
+  }
+
+  .about-section .image img {
+    width: 300px; /* Adjust the width of the image as needed */
+    height: auto;
+    border-radius: 20%;
+  }
+  /*CV*/
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 0 10px green;
+    padding: 50px;
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+    position: relative;
+    left: 50px;
+  }
+  .glass-card:hover{
+    box-shadow: #45a21a;
+  }
+  
+  .glass-card h2 {
+    color: green;
+    margin-bottom: 10px;
+  }
+  .buttonDownload {
+    display: inline-block;
+    position: relative;
+    padding: 20px 40px;
+    border-radius: 20px;
+    background-color: #4CC713;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-align: center;
+    text-indent: 15px;
+    border: none;
+   }
+   
+   .buttonDownload:hover {
+    background-color: #45a21a;
+    color: white;
+    cursor: pointer;
+   }
+   
+   .buttonDownload:before, .buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+   }
+   
+   .buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+   }
+   
+   .buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+   }
+   
+   .buttonDownload:hover:before {
+    border-color: #cdefbd;
+   }
+   
+   .buttonDownload:hover:after {
+    border-top-color: #cdefbd;
+    animation-play-state: running;
+   }
+   
+   @keyframes downloadArrow {
+    0% {
+     margin-top: -7px;
+     opacity: 1;
+    }
+   
+    0.001% {
+     margin-top: -15px;
+     opacity: 0.4;
+    }
+   
+    50% {
+     opacity: 1;
+    }
+   
+    100% {
+     margin-top: 0;
+     opacity: 0.4;
+    }
+   }
+  .glass-card p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .download-button:hover {
+    background-color: #555;
+  }
+  /*Responsive Cv section*/
+  
+
+  .about-section .text {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .about-section .read-more {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .abt-section{
+    text-align: center;
+    padding-top: 35px;
+  }
+  .text>p{
+    font-size: larger;
+    font-family: 'Raleway', sans-serif;
+  }
+  .text>h1{
+    color: green;
+  }
+  /*Skill sections*/
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+    
+  }
+
+  .skills-section {
+    padding: 20px;
+    border-radius: 35px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px green;
+  }
+  
+  .skills-heading {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .skill-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-icon {
+    font-size: 24px;
+    color: green;
+    margin-right: 10px;
+  }
+  
+  .skill-title {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 5px;
+  }
+  
+  .skill-description {
+    font-size: 20px;
+    color: #666;
+  }
+/*loader*/
+#loadingAnimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  background-color: #333;
+  border-radius: 50%;
+  animation: bounce 1s infinite;
+}
+
+.ball:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.ball:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.ball:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*Services*/
+.services-section {
+  flex-grow: 1;
+  padding: 20px;
+  /* Services section styles */
+}
+.services-section h1{
+  text-align: center;
+  font-size: xx-large;
+  color: #45a21a;
+}
+.services-section h2{
+  color: #25af3a;
+}
+.services-section p{
+  word-spacing: 3px;
+  font-size: large;
+}
+.service-item #check{
+  z-index: 10;
+}
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 150px;
+  /* Service container styles */
+}
+.service-item:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.service-item {
+  width: 300px;
+  margin: 20px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 10px green;
+  border-radius: 50px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Service item styles */
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .services-section {
+    padding: 10px;
+  }
+}
+/*Contact us section*/
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  
+  
+  border-radius: 35px;
+  box-shadow: 0 0 10px green;
+}
+
+.contact-form h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+  top: -10px;
+  left: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+button[type="submit"] {
+  width: 94%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 480px) {
+  .contact-form {
+    width: 100%;
+    max-width: none;
+  }
+}
+.footer{
+  text-align: center;
+  color: #45a049;
+  margin-top: 30px;
+}
+
+/*Social media*/
+.social-links,.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  background: white;
+  margin: 5px;
+  transition: 0.3s;
+  justify-content: center;
+}
+
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.social-btn:hover {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  padding: 2px;
+  width: 80px;
+}
+
+#twitter svg {
+  fill: #1da1f2;
+}
+
+#linkedin svg {
+  fill: #0e76a8;
+}
+
+#github {
+  fill: #333;
+}
+
+/*Button at the top*/
